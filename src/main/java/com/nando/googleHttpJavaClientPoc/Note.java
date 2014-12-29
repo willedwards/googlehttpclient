@@ -71,4 +71,5 @@ public class Note extends GenericJson {
         result = 31 * result + (title != null ? title.hashCode() : 0);
         return result;
     }
+
 }
