@@ -9,6 +9,7 @@ import com.google.api.client.json.JsonObjectParser;
 import com.google.api.client.json.jackson2.JacksonFactory;
 
 import java.io.IOException;
+import java.util.Map;
 
 /**
  * Author: wge
@@ -21,6 +22,7 @@ public class HttpRequestHelper
         private static HttpTransport HTTP_TRANSPORT = new NetHttpTransport();
         private static JsonFactory JSON_FACTORY = new JacksonFactory();
 
+
         private static HttpRequestFactory createRequestFactory() {
             return HTTP_TRANSPORT.createRequestFactory(new HttpRequestInitializer()
                {
@@ -32,11 +34,18 @@ public class HttpRequestHelper
                });
         }
 
-       public static HttpRequest buildGETRequest(GenericUrl url) throws IOException
+       public static HttpRequest buildRequestWithParams(GenericUrl url, Map<String,? extends Object> paramsMap) throws IOException
        {
            HttpRequestFactory requestFactory = createRequestFactory();
-           return requestFactory.buildGetRequest(url);
+           return requestFactory.buildPostRequest(url, new UrlEncodedContent(paramsMap));
        }
+
+    public static HttpRequest buildGETRequest(GenericUrl url) throws IOException
+    {
+        HttpRequestFactory requestFactory = createRequestFactory();
+        return requestFactory.buildGetRequest(url);
+    }
+
 
         public static HttpRequest buildPOSTRequest(GenericUrl url,GenericJson json) throws IOException
        {
