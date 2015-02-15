@@ -60,7 +60,7 @@ public class NotesRequesterAPITest
     {
         try{
 
-        List<Note> notesList = remoteRequester.getAll();
+        List<Note> notesList = (List<Note>)remoteRequester.getAll();
 
          assertEquals(2,notesList.size());
 

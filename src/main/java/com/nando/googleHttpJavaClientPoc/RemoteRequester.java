@@ -24,11 +24,10 @@ public class RemoteRequester
         this.urlConverter = urlConverter;
     }
 
-    public List<Note> getAll() throws IOException {
+    public List<? extends GenericJson> getAll() throws IOException {
 		HttpRequest request = HttpRequestHelper.buildGETRequest(urlConverter.listAll());
         HttpResponse response = request.execute();
-        List<Note> notes=  (List<Note>)response.parseAs(urlConverter.getClassList());
-		return notes;
+        return (List<? extends GenericJson>)response.parseAs(urlConverter.getClassList());
 	}
 
     public <T> T findById(Integer id) throws IOException

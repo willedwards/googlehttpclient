@@ -1,7 +1,6 @@
-package com.nando.googleHttpJavaClientPoc.util;
+package com.nando.googleHttpJavaClientPoc;
 
 import com.google.api.client.http.HttpResponse;
-import com.nando.googleHttpJavaClientPoc.Note;
 
 import java.io.IOException;
 import java.util.ArrayList;
