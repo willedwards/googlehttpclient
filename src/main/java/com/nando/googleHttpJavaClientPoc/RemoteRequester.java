@@ -3,6 +3,7 @@ package com.nando.googleHttpJavaClientPoc;
 import com.google.api.client.http.HttpRequest;
 import com.google.api.client.http.HttpResponse;
 import com.google.api.client.json.GenericJson;
+import com.nando.googleHttpJavaClientPoc.util.HttpRequestHelper;
 
 import java.io.IOException;
 import java.util.List;

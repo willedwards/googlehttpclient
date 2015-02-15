@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 public class NoteUrlConverter extends GenericUrl implements UrlConverter
 {
-    private static final String NOTES_BASE_URL = "http://private-anon-072adbda5-gaetest.apiary-mock.com/notes";
+    private static final String NOTES_BASE_URL = "http://private-5f9ca-gaetest.apiary-mock.com/notes";//"http://private-anon-072adbda5-gaetest.apiary-mock.com/notes";
     /** GET ALL */
     private static final GenericUrl listAllNotes() {
         return new NoteUrlConverter(NOTES_BASE_URL);
